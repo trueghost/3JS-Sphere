@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Scorched Earth 3D Model</title>
+    <style>
+        body { margin: 0; }
+        canvas { display: block; }
+    </style>
+</head>
+<body>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script>
+        // Set up the scene, camera, and renderer
+        var scene = new THREE.Scene();
+        var camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+        var renderer = new THREE.WebGLRenderer();
+        renderer.setSize(window.innerWidth, window.innerHeight);
+        document.body.appendChild(renderer.domElement);
+
+        // Create geometry for scorched earth
+        var geometry = new THREE.SphereGeometry(10, 32, 32); // Example: Using a sphere geometry
+        var material = new THREE.MeshBasicMaterial({ color: 0xff0000 }); // Example: Using a basic red material
+        var scorchedEarth = new THREE.Mesh(geometry, material);
+        scene.add(scorchedEarth);
+
+        // Add lights to the scene
+        var ambientLight = new THREE.AmbientLight(0x404040);
+        scene.add(ambientLight);
+
+        var directionalLight = new THREE.DirectionalLight(0xffffff, 1);
+        directionalLight.position.set(0, 1, 0);
+        scene.add(directionalLight);
+
+        // Position the camera
+        camera.position.z = 20;
+
+        // Render loop
+        function animate() {
+            requestAnimationFrame(animate);
+            scorchedEarth.rotation.x += 0.01;
+            scorchedEarth.rotation.y += 0.01;
+            renderer.render(scene, camera);
+        }
+        animate();
+    </script>
+</body>
+</html>

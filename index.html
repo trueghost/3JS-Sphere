@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+    <title>3JS</title>
+    <script>
+      document.documentElement.style.display = 'none';
+      window.addEventListener('load', function () {
+        document.documentElement.style.display = 'block';
+      });
+    </script>    
+  </head>
+  <body>
+    <div id="app"></div>
+    <canvas class="webgl"></canvas>
+    <nav>
+      <a href="/" class="sphere">Sphere</a>
+      <ul>
+        <li><a class="explore">Explore</a></li>
+        <li><a class="create">Create</a></li>
+      </ul>
+    </nav>
+    <h1 class="title">Give it a spin</h1>
+    <script type="module" src="/main.js"></script>
+  </body>
+</html>
